@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodologías de Desarrollo de SW</title>
+    <link rel="stylesheet" href="parcial2.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">METODOLOGÍAS DE DESARROLLO DE SW</h1>
+        <h2 class="sub-title">¿Qué es una metodología de desarrollo de software?</h2>
+        <p class="description">
+            Las metodologías de desarrollo de software son un conjunto de técnicas y métodos organizativos que se aplican para diseñar soluciones de software informático. El objetivo de las distintas metodologías es el de intentar organizar los equipos de trabajo para que estos desarrollen las funciones de un programa de la mejor manera posible.
+        </p>
+
+        <h2 class="section-title">TIPOS DE METODOLOGÍAS</h2>
+        <hr class="separator">
+
+        <div class="methodology-grid">
+            <div class="row">
+                <button class="btn btn-cascada" onclick="openModal('Cascada')">CASCADA</button>
+                <button class="btn btn-modelo-v" onclick="openModal('Modelo V')">MODELO V</button>
+                <button class="btn btn-agiles" onclick="openModal('Ágiles')">ÁGILES</button>
+                <button class="btn btn-scrum" onclick="openModal('Scrum')">SCRUM</button>
+            </div>
+            <div class="row row-center">
+                <button class="btn btn-kanban" onclick="openModal('Kanban')">KANBAN</button>
+                <button class="btn btn-xp" onclick="openModal('XP')">XP</button>
+                <button class="btn btn-hibridas" onclick="openModal('Híbridas')">HÍBRIDAS</button>
+            </div>
+        </div>
+
+        <hr class="separator">
+
+        <div class="jira-section">
+            <h3 class="link-title">LINK A TABLERO DE TRABAJO</h3>
+            <a href="https://empresaparalauni.atlassian.net/jira/software/projects/SCC/boards/1?atlOrigin=eyJpIjoiZGZiZjRiZDlhMWQ2NGUzNzg4MGE2OWFhYjE1MGYwZDkiLCJwIjoiaiJ9" class="btn-outline">---- JIRA ----</a>
+        </div>
+
+        <hr class="separator">
+
+        <div class="footer-section">
+            <a href="index.html" class="btn-outline">---- REGRESAR MENÚ PRINCIPAL ----</a>
+            
+            <p class="placeholder-text">"Si puedes imaginarlo, puedes hacerlo"</p>
+            <p class="student-name">Alumno: Saulo Daniel García Casas</p>
+        </div>
+    </div>
+
+    <div id="methodologyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Vista de Cascada</h3>
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <img src="ruta/a/tu/imagen-local-placeholder.png" alt="Información de la Metodología" class="modal-image">
+            </div>
+        </div>
+    </div>
+
+    <script src="parcial2.js"></script>
+</body>
+</html>

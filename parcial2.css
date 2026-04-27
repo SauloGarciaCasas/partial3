@@ -1,0 +1,194 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Tipografía */
+.main-title {
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.sub-title {
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.description {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    padding: 0 10%;
+}
+
+.section-title {
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.separator {
+    border: 0;
+    border-top: 1px solid #dcdcdc;
+    margin: 30px 0;
+}
+
+/* Cuadrícula de Botones */
+.methodology-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.row-center {
+    justify-content: center;
+}
+
+.row-center .btn {
+    width: 23.5%; /* Mantiene el mismo ancho que los de arriba */
+}
+
+/* Estilos de botones de metodologías */
+.btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-cascada { background-color: #0d6efd; }
+.btn-modelo-v { background-color: #6c757d; }
+.btn-agiles { background-color: #198754; }
+.btn-scrum { background-color: #dc3545; }
+.btn-kanban { background-color: #ffc107; color: #212529; } /* Texto oscuro para contraste */
+.btn-xp { background-color: #0dcaf0; }
+.btn-hibridas { background-color: #212529; }
+
+/* Enlaces y botones outline */
+.link-title {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 8px 25px;
+    border: 1px solid #4a90e2;
+    border-radius: 4px;
+    color: #4a90e2;
+    text-decoration: none;
+    font-size: 14px;
+    background-color: transparent;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Sección final */
+.instruction-title {
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.placeholder-text {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.student-name {
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+/* =========================================
+   Estilos de la Ventana Modal
+   ========================================= */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    border-radius: 6px;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: left;
+}
+
+.modal-header {
+    padding: 15px 25px;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #444;
+}
+
+.close-btn {
+    color: #999;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+.modal-body {
+    padding: 20px;
+    background-color: #f8f9fa; /* Fondo gris muy claro como en tu captura */
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}

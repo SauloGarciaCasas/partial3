@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <div class="App">
+        <header class="App-header">
+            <img src="profile.jpg" class="App-logo" alt="logo" />
+            
+            <div id="logged-out-view">
+                <p>
+                    ANÁLISIS Y DISEÑO DE SOFTWARE
+                    <br>
+                    Alumno: Saulo Daniel Garcia Casas
+                </p>
+                
+                <a class="App-link" href="https://www.linkedin.com/in/garc%C3%ADa-casas-saulo-daniel-659b463a4/?authuser=1" target="_blank" rel="noopener noreferrer">
+                  LinkedIn de mi profile
+                </a>
+                <a class="App-link" href="files.html">
+                  Documentación de Parcial 1
+                </a>
+                <a class="App-link" href="parcial2.html">
+                  Documentación de Parcial 2
+                </a>
+
+                <br><br>
+                <div id="buttonDiv" style="display: flex; justify-content: center;"></div>
+            </div>
+
+            <div id="logged-in-view" class="hidden">
+                <h1>Bienvenido(a), <span id="user-name"></span></h1>
+                <h2>EVALUACIÓN PARCIAL 3</h2>
+
+                <a class="App-link" href="ERS.pdf">
+                  DESCARGAR DOCUMENTO FRS DEL PROYECTO
+                </a>
+                <a class="App-link" href="https://empresaparalauni.atlassian.net/jira/software/projects/SCC/boards/1?atlOrigin=eyJpIjoiYzQxZDA2Njc4ODYyNDA4NDkxMWQ0NTNkMjhhNjNhYWQiLCJwIjoiaiJ9">
+                  TABLERO JIRA/PROYECTO Scale_Garage_Co
+                </a>
+                <button class="App-link logout-btn" onclick="handleSignOut()">
+                  CERRAR SESION PARCIAL 3
+                </button>
+            </div>
+
+        </header>
+    </div>
+
+    <script>
+        // Función para decodificar el token JWT que devuelve Google y obtener los datos del usuario
+        function decodeJwtResponse(token) {
+            let base64Url = token.split('.')[1];
+            let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            let jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            return JSON.parse(jsonPayload);
+        }
+
+        // Esta función se ejecuta cuando el login es exitoso
+        function handleCredentialResponse(response) {
+            const responsePayload = decodeJwtResponse(response.credential);
+
+            // 1. Ponemos el nombre del usuario en el HTML
+            document.getElementById('user-name').innerText = responsePayload.name;
+
+            // 2. Ocultamos la vista principal y mostramos la vista del Parcial 3
+            document.getElementById('logged-out-view').classList.add('hidden');
+            document.getElementById('logged-in-view').classList.remove('hidden');
+        }
+
+        // Función para volver a la pantalla principal
+        function handleSignOut() {
+            document.getElementById('logged-in-view').classList.add('hidden');
+            document.getElementById('logged-out-view').classList.remove('hidden');
+            // Opcional: google.accounts.id.disableAutoSelect(); si no quieres que inicie sesión solo al recargar
+        }
+
+        // Inicializamos el botón de Google al cargar la página
+        window.onload = function () {
+            google.accounts.id.initialize({
+                client_id: "313209806870-9cedp1pngi14b8u216p7014bd08f4v4o.apps.googleusercontent.com",
+                callback: handleCredentialResponse
+            });
+            
+            // Renderizamos el botón en el div con id "buttonDiv"
+            google.accounts.id.renderButton(
+                document.getElementById("buttonDiv"),
+                { theme: "outline", size: "large", type: "standard", text: "signin_with" } 
+            );
+        }
+    </script>
+</body>
+</html>
